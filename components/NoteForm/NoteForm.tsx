@@ -6,7 +6,7 @@ import css from './NoteForm.module.css';
 
 interface NoteFormValues {
   title: string;
-  content?: string;
+  content: string;
   tag: 'Todo' | 'Work' | 'Personal' | 'Meeting' | 'Shopping';
 }
 

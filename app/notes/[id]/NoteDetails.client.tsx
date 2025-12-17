@@ -12,7 +12,7 @@ export default function NoteDetailsClient() {
     queryKey: ['note', id],
     queryFn: () => fetchNoteById(id!),
     enabled: !!id,
-    refetchOnMount: false, 
+    refetchOnMount: false,
   });
 
   if (isLoading) return <p>Loading, please wait...</p>;
@@ -23,6 +23,7 @@ export default function NoteDetailsClient() {
       <div className={css.item}>
         <div className={css.header}>
           <h2>{note.title}</h2>
+          <span className={css.tag}>{note.tag}</span> {}
         </div>
         <p className={css.content}>{note.content}</p>
         <p className={css.date}>

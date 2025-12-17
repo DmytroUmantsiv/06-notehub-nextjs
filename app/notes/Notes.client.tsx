@@ -29,6 +29,7 @@ export default function NotesClient() {
     queryFn: () => fetchNotes({ page, perPage: 12, search: debouncedSearch }),
     staleTime: 60000,
     refetchOnWindowFocus: false,
+    placeholderData: () => queryClient.getQueryData<FetchNotesResponse>(['notes', page, debouncedSearch]),
   });
 
   const notes = data?.notes ?? [];

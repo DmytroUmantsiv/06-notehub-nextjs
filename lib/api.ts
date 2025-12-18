@@ -25,6 +25,7 @@ export async function createNote(note: Omit<Note, 'id' | 'createdAt' | 'updatedA
   return response.data;
 }
 
-export async function deleteNote(id: string): Promise<void> {
-  await api.delete(`/notes/${id}`);
+export async function deleteNote(id: string): Promise<Note> {
+  const response = await api.delete<Note>(`/notes/${id}`);
+  return response.data;
 }
